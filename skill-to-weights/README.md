@@ -16,6 +16,7 @@ GLM 5.3 Flash.
 | Notebook | What it does | Time |
 |---|---|---|
 | `workshop_skill_to_weights.ipynb` | headroom with and without the skill -> training rows -> 48-step LoRA SFT -> tuned eval -> pass@1 / pass@k / pass^k chart -> promotes the tuned checkpoint | ~15 min |
+| `workshop_skill_to_weights_glimmer.ipynb` | the same recipe on Muse Glimmer 30B. Glimmer is on serverless training but not serverless inference, so every reply (base, base + skill, tuned) is sampled from the training session; learning rate 2e-5 | not yet timed |
 
 **What to expect.** On the reference run (16 held-out cases x 4 draws), held-out pass@1 was 9% for base, 62% with the
 skill in the prompt, and 67% for the tuned model with no skill. Your numbers will move a little from run to run.
